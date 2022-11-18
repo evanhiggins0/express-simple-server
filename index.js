@@ -5,6 +5,9 @@ const PORT = process.env.PORT || 3300;
 
 server.use(express.static('public'));
 
+var favicon = require('serve-favicon');
+server.use(favicon(__dirname + '/public/favicon.ico'));
+
 server.get('/', (_req, res) => {
   res.send('Hello Express!');
 });
